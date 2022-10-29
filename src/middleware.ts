@@ -19,7 +19,7 @@ export async function middleware (request: NextRequest) {
 
     // TODO: Improve perfomance. Fetching movies every time we make this check
     //  is too expensive.
-    const movies: IMovie[] = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/movies`)
+    const movies: IMovie[] = await fetch(`https://api.npoint.io/8ba3b85d1c9abb10d83c/movies`)
       .then((res) => res.json())
       .then((data: IMovie[]) => category == "All"? data.slice(0, number*10) : data.filter(e=>e["Major Genre"] === category).slice(0, number*10))
       .catch((error) => console.error(error)) as IMovie[];
