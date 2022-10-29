@@ -15,6 +15,7 @@ const Movies: NextPage<TProps> = ({ movies }) => {
 
   function handleClick() {
     setNumber(number+1);
+    alert("Hay un error con 'useContext'")
   }
 
   return (
@@ -33,7 +34,9 @@ export default Movies;
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const {category, number} = useContext(userContext);
+  //const { category, number} = useContext(userContext);
+  const category = "All";
+  const number = 2;
 
   const movies = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/movies`)
     .then((res) => res.json())

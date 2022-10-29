@@ -9,7 +9,8 @@ export const Nav: FC = () => {
   const {setCategory} = useContext(userContext)
 
   const handleSelect = (e:React.ChangeEvent<HTMLSelectElement>) =>{
-    setCategory(e.target.value)
+    setCategory(e.target.value);
+    alert("Hay un error con 'useContext'")
   }
 
   return (

@@ -10,7 +10,9 @@ import {IMovie} from "./components/MovieList/MovieList";
 export async function middleware (request: NextRequest) {
   const urlItems = request.nextUrl.pathname.split('/').filter((item) => item !== '');
 
-  const {category, number} = useContext(userContext);
+  //const { category, number} = useContext(userContext);
+  const category = "All";
+  const number = 2;
 
   if (urlItems[0] === 'movies' && urlItems.length === 2) {
     const movieId = urlItems[1];
