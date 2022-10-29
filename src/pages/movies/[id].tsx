@@ -49,7 +49,7 @@ const MovieDetailPage: NextPage<TProps> = ({ movie }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch("https://api.npoint.io/8ba3b85d1c9abb10d83c/movies" + context.params?.id);
+  const res = await fetch("https://api.npoint.io/8ba3b85d1c9abb10d83c/movies/" + context.params?.id);
   const movie = await res.json();
 
   return {
